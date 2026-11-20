@@ -1,142 +1,119 @@
+# 📱 SMS Shield – Intelligent SMS Spam Detection Using NLP & Machine Learning
 
-# 🛡️ SMS Shield – SMS Spam Detection System
+## 🚀 Live Demo
 
-## Project Overview
+**Try the live application here:**
 
-SMS Shield is a Machine Learning and Natural Language Processing (NLP) based application that identifies whether an SMS message is Spam or Ham (Genuine).
+https://sms-spam-detection-omcd3vztcjkbixjqcykv9v.streamlit.app/
 
-The system analyses message content using text preprocessing, TF-IDF feature extraction and machine learning classification.
+## 📌 Project Overview
 
-## Objectives
+SMS Shield is an intelligent SMS Spam Detection system developed using Natural Language Processing (NLP) and Machine Learning.
 
-- Detect unwanted and fraudulent SMS messages.
-- Apply NLP techniques to clean and process text.
-- Convert text into numerical features using TF-IDF.
-- Compare multiple machine learning algorithms.
-- Build an interactive web application for real-time predictions.
+The system automatically classifies SMS messages into two categories:
 
-## Technologies Used
+- **Spam:** Unwanted, fraudulent, promotional, or suspicious messages.
+- **Ham:** Genuine and legitimate messages.
 
-- Python
-- Pandas and NumPy
-- NLTK
-- Scikit-learn
-- Streamlit
-- Joblib
-- TF-IDF Vectorization
+The application uses text preprocessing, TF-IDF feature extraction, and machine learning algorithms to identify spam messages. It provides an interactive web interface built with Streamlit, allowing users to enter SMS messages and receive instant predictions.
 
-## Dataset
+## 🎯 Project Objectives
 
-UCI SMS Spam Collection Dataset.
+- Develop an automated SMS spam detection system.
+- Apply NLP techniques to clean and process text messages.
+- Perform exploratory data analysis on SMS data.
+- Convert textual messages into numerical features using TF-IDF.
+- Train and compare multiple machine learning models.
+- Evaluate models using accuracy, precision, recall, and F1-score.
+- Deploy the best-performing model through an interactive web application.
 
-Dataset source:
-https://archive.ics.uci.edu/dataset/228/sms+spam+collection
+## 📂 Dataset
 
-Total messages: 5,572
+**Dataset:** SMS Spam Collection Dataset
 
-Classes:
-- Ham (Genuine)
-- Spam
+**Source:** UCI Machine Learning Repository
 
-## Machine Learning Models
+Dataset link: https://archive.ics.uci.edu/dataset/228/sms+spam+collection
 
-Three algorithms were trained and evaluated:
+The dataset contains approximately 5,572 SMS messages labelled as:
+
+- `ham` – Legitimate messages.
+- `spam` – Unwanted or fraudulent messages.
+
+The dataset was used for text preprocessing, exploratory analysis, model training, and evaluation.
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| Pandas | Data manipulation |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| Seaborn | Exploratory data analysis |
+| NLTK | Natural Language Processing |
+| Scikit-learn | Machine Learning |
+| TF-IDF | Text feature extraction |
+| Joblib | Model serialization |
+| Streamlit | Web application |
+| Git & GitHub | Version control and project hosting |
+
+## ⚙️ Project Workflow
+
+### 1. Dataset Collection
+Collected the SMS Spam Collection dataset from the UCI Machine Learning Repository.
+
+### 2. Exploratory Data Analysis (EDA)
+- Analyzed the dataset structure.
+- Examined spam and ham distribution.
+- Studied message lengths.
+- Visualized the distribution of message categories.
+
+### 3. Text Preprocessing
+Applied the following NLP techniques:
+
+- Lowercase conversion.
+- URL removal.
+- Removal of unnecessary characters.
+- Stopword removal.
+- Stemming using Porter Stemmer.
+- Handling missing and empty messages.
+
+### 4. Feature Extraction
+
+Used **TF-IDF (Term Frequency–Inverse Document Frequency)** to convert text messages into numerical feature vectors.
+
+Configuration:
+- Maximum features: 5,000.
+- Training and testing split: 80:20.
+- Stratified sampling.
+- Random state: 42.
+
+### 5. Model Development
+
+Three machine learning algorithms were trained and compared:
 
 1. Multinomial Naive Bayes
 2. Logistic Regression
-3. Support Vector Machine (SVM)
+3. Support Vector Machine (LinearSVC)
 
-## Model Performance
+### 6. Model Evaluation
 
-| Model | Accuracy | Precision | Recall | F1 Score |
-|---|---:|---:|---:|---:|
-| Naive Bayes | 96.41% | 99.11% | 74.00% | 84.73% |
-| Logistic Regression | 96.59% | 98.28% | 76.00% | 85.71% |
-| SVM | 98.03% | 96.38% | 88.67% | 92.36% |
+Models were evaluated using:
 
-Best-performing model: Support Vector Machine (SVM).
+- Accuracy
+- Precision
+- Recall
+- F1-score
 
-## Project Workflow
+### 7. Web Application Development
 
-1. Dataset collection
-2. Exploratory Data Analysis
-3. Text preprocessing
-4. TF-IDF feature extraction
-5. Model training
-6. Model evaluation
-7. Best model selection
-8. Streamlit web application development
+Developed an interactive Streamlit application that allows users to:
 
-## Project Structure
+- Enter SMS messages.
+- Analyze messages instantly.
+- Identify spam and legitimate messages.
+- View prediction results.
+- Test sample spam and ham messages.
 
-```text
-SMS_Spam_Detection/
-├── app/
-│   ├── __init__.py
-│   ├── predict.py
-│   └── streamlit_app.py
-├── dataset/
-├── models/
-├── notebooks/
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
-## Run Locally
-
-Clone the repository:
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-Move into the project directory:
-
-```bash
-cd SMS_Spam_Detection
-```
-
-Create and activate a virtual environment, then install dependencies:
-
-```bash
-python -m venv venv
-```
-
-Windows CMD:
-
-```cmd
-venv\Scripts\activate.bat
-```
-
-Install requirements:
-
-```bash
-pip install -r requirements.txt
-```
-
-Launch the application:
-
-```bash
-python -m streamlit run app/streamlit_app.py
-```
-
-## Expected Output
-
-The application classifies an entered SMS message as:
-
-- Spam Message
-- Genuine Message (Ham)
-
-## Future Enhancements
-
-- Deep learning-based spam detection.
-- Improved confidence calibration.
-- Multilingual SMS classification.
-- More advanced security analysis.
-
-## Project Status
-
-Machine learning model and local Streamlit application successfully developed and tested.
-
-Online deployment: In progress.
+### 8. Deployment
